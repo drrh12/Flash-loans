@@ -4,6 +4,7 @@ const {
   addressFactory,
   addressRouter,
   addressFrom,
+  addressFromEth,
   addressTo,
 } = require("./AddressList");
 
@@ -25,9 +26,9 @@ const contractFacttory = new ethers.Contract(
 
 const contractRouter = new ethers.Contract(addressRouter, routerABI, provider);
 
-//console.log(contractFacttory);
+// console.log(contractFacttory);
 
-// Call the blockchain
+// call the blockchain
 const getPrices = async (amountInHuman) => {
   // convert to blockchain form
   const contractToken = new ethers.Contract(addressFrom, erc20ABI, provider);
@@ -39,7 +40,7 @@ const getPrices = async (amountInHuman) => {
     addressTo,
   ]);
 
-  //convert amount out
+  // convert amount out
   const contractTokenTwo = new ethers.Contract(addressTo, erc20ABI, provider);
   const decimalsTwo = await contractTokenTwo.decimals();
   // hex to int
@@ -47,6 +48,9 @@ const getPrices = async (amountInHuman) => {
     amountsOut[1].toString(),
     decimalsTwo
   );
+
+  // eth get price
+  // const contractTokenEther = new ethers.Contract(addressFromEth);
 
   console.log(amountOutHuman);
 };
