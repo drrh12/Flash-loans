@@ -1,10 +1,8 @@
-// https://docs.pancakeswap.finance/developers/smart-contracts/pancakeswap-exchange/v2-contracts/factory-v2 - /router-v2
 // enables the contract's pair
-const addressFactory = "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73"; // pancakeswap factory contract
-const addressRouter = "0x10ED43C718714eb63d5aA57B78B54704E256024E"; // pancakeswap router contract
-const addressFrom = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"; // BUSD contract
-const addressFromEth = "0x2170Ed0880ac9A755fd29B2688956BD959F933F8"; //ETH contract
-const addressTo = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"; // WBNB contract
+const addressFactory = "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f"; // uniwswap factory contract
+const addressRouter = "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"; // uniswap router contract
+const addressFrom = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"; // WETH
+const addressTo = "0xdAC17F958D2ee523a2206206994597C13D831ec7"; // "0x6B3595068778DD592e39A122f4f5a5cF09C90fE2"; // SUSHI - //usdt 0xdAC17F958D2ee523a2206206994597C13D831ec7
 
 module.exports = {
   addressFactory,

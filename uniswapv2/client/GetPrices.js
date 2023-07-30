@@ -1,10 +1,10 @@
 const ethers = require("ethers");
+const amountInHuman = "1";
 
 const {
   addressFactory,
   addressRouter,
   addressFrom,
-  addressFromEth,
   addressTo,
 } = require("./AddressList");
 
@@ -12,7 +12,7 @@ const { erc20ABI, factoryABI, routerABI, pairABI } = require("./AbiList");
 
 // standard provider
 const provider = new ethers.providers.JsonRpcProvider(
-  "https://bsc-dataseed.binance.org/"
+  "https://mainnet.infura.io/v3/d341f6b6b99a4c66be728d753b3e8534"
 );
 
 // connect to factory
@@ -55,5 +55,4 @@ const getPrices = async (amountInHuman) => {
   console.log(amountOutHuman);
 };
 
-const amountInHuman = "500";
-getPrices("500");
+getPrices("1");
