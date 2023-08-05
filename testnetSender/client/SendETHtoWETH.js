@@ -13,18 +13,20 @@ const walletSigner = new ethers.Wallet(privateKey, provider);
 
 const exchangeETH = async () => {
   const gasPrice = await provider.getGasPrice();
-  const nonce = 0; // web3.eth.getTransactionCount(myAddress)
-  const value = "0.05";
+  const nonce = 2; // web3.eth.getTransactionCount(myAddress)
+  const value = "0.1";
   const txBuild = {
     from: myAddress,
     to: "0xb16F35c0Ae2912430DAc15764477E179D9B9EbEa", //Sepolia test network
     value: ethers.utils.parseEther(value),
     nonce: nonce,
-    gasLimit: 10000,
+    gasLimit: 1000000,
     gasPrice: gasPrice,
   };
   //send the transaction
-  console.log(txBuild);
+  const txSend = await walletSigner.sendTransaction(txBuild);
+  console.log("transaction: ");
+  console.log(txSend);
 };
 
 exchangeETH();
